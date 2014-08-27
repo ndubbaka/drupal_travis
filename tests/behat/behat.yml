@@ -6,3 +6,21 @@ default:
       goutte: ~
       selenium2: ~
       base_url: https://www.edx.org
+      
+master:
+  paths:
+    features: 'features'
+  extensions:
+    Behat\MinkExtension\Extension:
+      goutte: ~
+      selenium2: ~
+      base_url: https://www.edx.org
+      
+qa:
+  paths:
+    features: 'features'
+  extensions:
+    Behat\MinkExtension\Extension:
+      goutte: ~
+      selenium2: ~
+      base_url: https://qa.edx.org
