@@ -10,4 +10,4 @@ before_script:
   #- mkdir application/cache application/logs          # create cache and log dirs
   #- chmod 777 application/cache application/logs      # set permission
 script:
-  - ./bin/behat --config tests/behat/behat.yml -p=TRAVIS_BRANCH  # run behat
+  - ./bin/behat --config tests/behat/behat.yml -p=$TRAVIS_BRANCH  # run behat
