@@ -5,7 +5,7 @@ services:
   - mysql
 before_script:
   # install behat, mink etc
-  - composer install --prefer-source # Have to prefer source or hit github rate limit
+  - composer install # Have to prefer source or hit github rate limit
   - git submodule update --init --recursive           # not really needed but makes sure submodules are there
   #- mkdir application/cache application/logs          # create cache and log dirs
   #- chmod 777 application/cache application/logs      # set permission
