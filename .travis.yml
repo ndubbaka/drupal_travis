@@ -1,13 +1,36 @@
+# Travis CI configuration
+
 language: php
 php:
   - "5.4"
-services:
-  - mysql
+services: mysql
+addons:
+  firefox: "28.0"
+# use docker infrastructure for builds
+sudo: false
+env:
+  global:
+    - DATABASE='drupal_test'
+    - DB_USERNAME='root'
+    - DB_ENCODE='utf8'
+before_install:
+  - mysql -e "create database IF NOT EXISTS drupal_test;" -uroot
+install:
+  - rvm install ruby-1.9.3-p194
+  - rvm use 1.9.3-p194
+  - gem install bundler
+  - bundle install
+  - composer global require drush/drush:6.* drupal/coder:~7.2
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - make install
 before_script:
-  # install behat, mink etc
-  - composer install --no-interaction --prefer-source # Have to prefer source or hit github rate limit
-  - git submodule update --init --recursive           # not really needed but makes sure submodules are there
-  #- mkdir application/cache application/logs          # create cache and log dirs
-  #- chmod 777 application/cache application/logs      # set permission
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 script:
-  - ./bin/behat --config tests/behat/behat.yml -p=$TRAVIS_BRANCH  # run behat
+  - make test
+  - "(cd tests/scripts && bash ci_run_php_tests.sh)"
+  - "phpcs docroot/sites/all/modules --report=full"
+branches:
+    only:
+      - master
+      - develop

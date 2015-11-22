@@ -1,8 +1,6 @@
 {
-  "require": {
-    "drupal/drupal-extension": "1.0.*@stable"
-  },
-  "config": {
-    "bin-dir": "bin/"
-  }
+    "require-dev": {
+        "drush/drush": "6.*",
+        "drupal/coder": "~7.2"
+    }
 }
