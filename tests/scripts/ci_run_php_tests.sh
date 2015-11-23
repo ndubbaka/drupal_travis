@@ -11,6 +11,6 @@ drush test-run FilterSettingsTestCase --uri=http://127.0.0.1:8083
 
 phpcs --version
 pwd
-phpcs sites/all/modules/custom
+phpcs sites/all/modules
 
 cd ..
