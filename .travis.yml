@@ -31,7 +31,7 @@ script:
 # Javascript tests from makefile
 #   - make test
   - "(cd tests/scripts && bash ci_run_php_tests.sh)"
-  - "phpcs docroot/sites/all/modules --report=full || true"
+  - "phpcs docroot/sites/all/modules/bettery_taxonomy_term_ui/bettery_taxonomy_term_ui.module --report=full"
 branches:
     only:
       - master
