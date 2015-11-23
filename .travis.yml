@@ -22,12 +22,14 @@ install:
   - bundle install
   - composer global require drush/drush:6.* drupal/coder:~7.2
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - make install
+# Javascript tests from makefile - gulpfile.js
+#   - make install
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 script:
-  - make test
+# Javascript tests from makefile
+#   - make test
   - "(cd tests/scripts && bash ci_run_php_tests.sh)"
   - "phpcs docroot/sites/all/modules --report=full"
 branches:
