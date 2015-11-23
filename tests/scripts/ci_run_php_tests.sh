@@ -7,4 +7,4 @@ cd ../../docroot
 drush site-install testing --db-url=$DB_URL --site-name=my-site --yes
 drush en --yes simpletest
 drush runserver 127.0.0.1:8083 &
-drush docroot test-run --uri=http://127.0.0.1:8083
+#drush docroot test-run --uri=http://127.0.0.1:8083
