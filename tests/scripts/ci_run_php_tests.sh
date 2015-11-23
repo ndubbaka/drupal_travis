@@ -11,6 +11,6 @@ drush test-run FilterSettingsTestCase --uri=http://127.0.0.1:8083
 
 phpcs --version
 pwd
-phpcs sites/all/modules
+phpcs sites/all/modules/bettery_taxonomy_term_ui/bettery_taxonomy_term_ui.module
 
 cd ..
