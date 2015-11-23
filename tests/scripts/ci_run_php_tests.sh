@@ -9,4 +9,6 @@ drush en --yes simpletest
 drush runserver 127.0.0.1:8083 &
 drush test-run FilterSettingsTestCase --uri=http://127.0.0.1:8083
 
+phpcs -v
+
 cd ..
