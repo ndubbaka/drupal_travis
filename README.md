@@ -9,3 +9,7 @@
 ###Roadmap
 * behat
 * javascript tests
+
+
+###References: 
+* panopoly http://cgit.drupalcode.org/panopoly/tree/.travis.yml?id=d1fecfa47394adbeb2295b820666c0c09d65a1ca
