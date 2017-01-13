@@ -24,3 +24,12 @@ qa:
       goutte: ~
       selenium2: ~
       base_url: https://qa.edx.org
+      
+dev:
+  paths:
+    features: 'features'
+  extensions:
+    Behat\MinkExtension\Extension:
+      goutte: ~
+      selenium2: ~
+      base_url: https://dev.edx.org
